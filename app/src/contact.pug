@@ -1,0 +1,47 @@
+-var icons = ['be', 'facebook', 'instagram']
+-var contacts = [{ href:'tel:+2343057388420', info:'(234) 305-738-8420', icon: 'phone'}, {href:'https://goo.gl/maps/GPhy8AeeGzaFHq249', info:'1287 Steve Hunt Road, Florida', icon: 'map'},{href:'mailto:info@elastic-studios.com', info: 'info@elastic-studios.com', icon: 'mass'}]
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style/main.min.css")
+        title Document
+    body
+        include view/components/header.pug
+        main.contact
+            .contact__container
+                .contact__content
+                    .contact__content-inscription
+                        .contact__content-img
+                            img(src="images/elastic_studios.webp", alt="")
+                        .contact__content-icons
+                             ul.contact__content-list
+                                each icon in icons 
+                                    li.main__list-item
+                                        a.main__list-link(href="https://api.telegram.org/bot1572870805:AAHUc6vOrWzByKZjlW7iI_O4mQuWqqd4ex8/")
+                                            i(class= 'icon-' + icon)
+                    .contact__content-form
+                        h2.contact__content-title Contact-us
+                        form(action="").form
+                            .form__item
+                                label(for="form-name") Name
+                                input.contact-bot(type="text" id="form-name"  required placeholder="Enter your name")
+                            .form__item
+                                label(for="form-email") Email Address
+                                input.contact-bot(type="email" id="form-email" required placeholder="Enter your email addres")
+                            .form__item
+                                label(for="form-mass") Message
+                                textarea.contact-bot(name="", cols="30", rows="10" id="form-mass" required placeholder="Enter your message here")
+                            .form__item
+                                p.form__info We will get back to you within one business day
+                                button.form__button Submit
+                            ul.form__contact
+                                each contact in contacts 
+                                    li.form__contact-item
+                                        a.form__contact-link(href=contact.href)= contact.info
+                                            i(class= 'icon-' + contact.icon)
+                            
+            
+        
+        script(src="./script/common.js")

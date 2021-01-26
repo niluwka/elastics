@@ -1,0 +1,288 @@
+.body {
+    background: $white;
+
+    header {
+        background: #000;
+    }
+}
+
+.book {
+    padding: 193px 0 193px 0;
+
+    &__container {
+        @include container();
+    }
+
+    &__content {
+        margin-bottom: 100px;
+        @include media($sm){
+            margin-bottom: 60px;  
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-title {
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 49px;
+            color: $black;
+            text-align: center;
+            margin-bottom: 11px;
+            @include media($sm){
+                font-size: 30px;
+            }
+            @include media(500px){
+                font-size: 24px;
+            }
+        }
+
+        &-desc {
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 33px;
+            color: $black;
+            text-align: center;
+            @include media($sm){
+                font-size: 20px;
+            }
+            @include media(500px){
+                font-size: 18px;
+                line-height: 25px;
+            }
+        }
+    }
+
+    &__tab {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 80px;
+
+        &-title {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 33px;
+            color: $black;
+        }
+
+        &-desc {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 19px;
+            color: #000000;
+
+        }
+
+        &-item {
+            @include row();
+            justify-content: center;
+            margin: 20px -15px 0;
+        }
+&-list{
+    padding: 0 15px;
+}
+        &-link {
+            display: inline-block;
+            padding: 9px 35px;
+            border: 1px solid #CCAF40;
+            border-radius: 5px;
+                       margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            color: $black;
+            transition: 1s;
+        }
+
+        &-link:hover {
+            background: $yellow;
+            color: $white;
+        }
+
+        &-list:last-of-type {
+            a {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__dispatch {
+        @include row();
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+
+        &-title {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 33px;
+            color: $black;
+            text-align: center;
+        }
+    }
+
+    &__form {
+        max-width: 1084px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        margin-top: 27px;
+        @include media($md){
+            gap: 15px;
+        }
+        @include media($sm){
+            grid-template-columns: 1fr;
+        }
+        &-item {
+            position: relative;
+        }
+
+        &-input,&-time,&-address {
+            padding: 16px;
+            width: 100%;
+            outline: none;
+            border: 2px solid #CCAF40;
+            display: inline-block;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.15px;
+            color: rgba(0, 0, 0, 0.87);
+            mix-blend-mode: normal;
+            opacity: 0.6;
+        }
+
+        &-label {
+            top: -8px;
+            left: 20px;
+            font-weight: 400;
+            position: absolute;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.4px;
+            padding: 0 8px;
+            color: #000000;
+            text-transform: capitalize;
+            opacity: 0;
+            background: white;
+        }
+
+        // &-input input:focus~label {
+        //     opacity: 1;
+        //     transition: 0.5s;
+        // }
+    }
+
+    &__select {
+        @include row();
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 100px;
+
+        &-title {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 33px;
+            color: #000000;
+            text-align: center;
+        }
+
+        &-desc {
+            font-weight: 600;
+            font-size: 21px;
+            line-height: 29px;
+            color: #000000;
+
+        }
+
+        &-price {
+            font-weight: 600;
+            font-size: 30px;
+            line-height: 41px;
+            color: #000000;
+            margin-bottom: 7px;
+            img {
+                margin-right: 4px;
+            }
+        }
+
+        &-info {
+            font-size: 16px;
+            line-height: 22px;
+            color: #000000;
+            max-width: 130px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        &-card {
+            max-width: 955px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 68px;
+            margin-top: 29px;
+            @include media($md){
+                gap: 20px;
+            }
+            @include media($sm){
+                grid-template-columns:  1fr;
+                justify-items: center;
+            }
+        }
+
+        &-item {
+            border: 1px solid #000000;
+            padding: 32px 0 31px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            @include media($sm){
+                max-width: 290px;
+               min-width: 290px;
+            }
+        }
+
+        &-btn {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 25px;
+            color: #FFFFFF;
+            display: inline-block;
+            padding: 9px 27px 9px 26px;
+            background: #CCAF40;
+            border-radius: 5px;
+           
+        }
+    }
+    &__footer-btn{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include media($sm){
+            // flex-direction: column;
+        }
+    }
+    &__footer-btn .btn:first-of-type{
+        margin-right: 30px;
+        @include media($sm){
+            margin-right: 0px;
+            margin-bottom: 30px;
+        }
+    }
+}
+.book__form-item input:focus ~ label {
+    opacity: 1;
+}
+.book__form-item input:focus {
+outline: none;
+}
+button{
+    outline: none;
+}

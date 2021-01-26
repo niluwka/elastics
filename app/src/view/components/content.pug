@@ -1,0 +1,46 @@
+-var icons = ['be', 'facebook', 'instagram']
+-var titles = ['BEAUTY','POTRAIT','FASHION','MEETINGS','PEOPLE','PRODUCT','COUPLE','NATURE','BIRTHDAYS']
+-var projects = [{ name:'25', desc: 'Years experience of freelance photography'}, {name:'49', desc: 'Projects worked on and counting'},{name: '36', desc: 'Stable client currently trust us and are booked'}]
+main.main
+    .main__wrapper           
+            .main__content.bg1
+                .main__container
+                    .main__content-info
+                        ul.main__list
+                            each icon in icons 
+                                li.main__list-item
+                                    a.main__list-link(href="https://instagram.com/_it_web_?igshid=1hdyelx9cys1n")
+                                        i(class= 'icon-' + icon) 
+                        p.main__content-desc We take photos as a return ticket to a moment otherwise gone             
+                        a.btn(href="./book.html") Book now
+                    .main__content-btn
+                        a.main__content-more(href="#!") View more
+                        i.icon-down  
+            - for (var x = 2; x <= 10; x++)                         
+                .main__beauty(class=`bg${x}`)
+                    .main__beauty-inner(class=`main__beauty-position${x}`) 
+                        .main__beauty-attitude(class=`main__beauty-attitude${x}`)                       
+                            .main__beauty-info                           
+                                h2.main__beauty-title=`${titles[x-2]}`
+                                p.main__beauty-desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ullamcorper ornare odio ultrices elementum ut.
+                            a.main__beauty-btn(href="#") Take a look
+                                span.icon-arrow
+                    div(class=`main--${x}`)
+            .main__beauty.bg11
+                .main__project
+                    .main__content-btn
+                        a.main__content-more.main__content-back(href="#!") Back to top
+                        i.icon-up 
+                    .main__project-cards
+                        each project in projects 
+                            .main__project-card
+                                h3.main__project-title= project.name
+                                p.main__project-desc= project.desc
+                    a.btn(href="#") Book now
+    .slider__controls
+        button.slider__prev.slider__btn 
+            i.icon-up          
+        button.slider__next.slider__btn 
+            i.icon-down    
+                
+            

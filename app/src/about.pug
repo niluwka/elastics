@@ -1,0 +1,30 @@
+-var icons = ['be', 'facebook', 'instagram']
+-var contacts = [{ info:'(234) 305-738-8420', icon: 'phone'}, {info:'1287 Steve Hunt Road, Florida', icon: 'map'},{info: 'info@elastic-studios.com', icon: 'mass'}]
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style/main.min.css")
+        title Document
+    body
+        include view/components/header.pug
+        main.contact
+            .contact__container
+                .contact__content.about__content
+                    .contact__content-inscription
+                        .contact__content-img
+                            img(src="images/elastic_studios.webp", alt="")
+                        .contact__content-icons
+                             ul.contact__content-list
+                                each icon in icons 
+                                    li.main__list-item
+                                        a.main__list-link(href="#")
+                                            i(class= 'icon-' + icon)
+                    .contact__content-about
+                        h2.contact__content-title About
+                        p.contact__content-desc Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non nunc eleifend id pulvinar. Id pretium feugiat dignissim quisque. Duis purus tellus duis nunc rhoncus, ultrices id in ipsum. Eget sit empor habitant id turpis imperdiet ut. 
+                        p.contact__content-desc If you are looking to make enquiries, kindly #[a(href="./contact.html").contact__content-span contact] us or make your booking #[a(href="./book.html").contact__content-span here] . 
+            
+        
+        script(src="./script/common.js")

@@ -1,0 +1,249 @@
+.contact {
+    background: $black;
+min-height: 100vh;
+    padding: 265px 0 109px 0;
+    @include media($xs){
+        padding: 185px 0 90px 0;  
+    }
+
+    &__container {
+        @include container();
+
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 70px;
+        justify-content: space-between;
+        @include media($md){
+            grid-gap: 50px; 
+        }
+        @include media($sm){
+            grid-gap: 30px; 
+        }
+
+        &-img {
+            margin-bottom: 76px;
+        }
+
+        &-inscription {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @include media($sm){
+max-width: 200px;
+            }
+            @include media(450px){
+max-width: 100px;
+            }
+        }
+
+        &-list {
+            display: flex;
+
+            li {
+                margin-left: 54px;
+                @include media($sm){
+                    margin-left: 35px;
+                }
+                @include media($xs){
+                    margin-left: 20px;
+                }
+            }
+
+            li:first-of-type {
+                margin-left: 54px;
+                @include media($sm){
+                    margin-left: 5px;
+                }
+            }
+
+            a {
+                width: 49px;
+                height: 49px;
+                padding: 15px 10px;
+                font-size: 28px;
+                @include media($xs){
+                    width: 30px;
+                    height: 30px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &-title {
+            font-weight: 400;
+            font-size: 64px;
+            line-height: 87px;
+            color: $white;
+            margin-bottom: 29px;
+            @include media($xs){
+                font-size: 50px;
+                line-height: 60px;
+                margin-bottom: 15px;  
+            }
+            @include media($sm){
+                font-size: 60px; 
+            }
+            @include media(400px){
+                font-size: 30px; 
+            }
+        }
+    }
+}
+
+.form {
+    max-width: 570px;
+    @include media($md){
+        max-width: 380px;
+    }
+    @include media($sm){
+        max-width: 300px;
+    }
+    @include media($xs){
+        max-width: 250px;
+    }
+    @include media(400px){
+        max-width: 150px;
+    }
+
+    &__item {
+        label {
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 34px;
+            color: $white;
+            display: block;
+            margin-bottom: 3px;
+            @include media(400px){
+                font-size: 18px;
+            line-height: 20px;  
+            }
+
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 25px;
+            color: #E4E4E4;
+            background: transparent;
+            border: 2px solid $white;
+            outline: none;
+            border-radius: 5px;
+            @include media($sm){
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        input {
+            padding: 26px 0 27px 25px;
+            margin-bottom: 30px;
+            @include media(400px){
+                padding: 13px 0 13px 13px; 
+                margin-bottom: 20px;
+            }
+        }
+
+        textarea {
+            width: 570px;
+            height: 352px;
+            padding: 27px 0 0 25px;
+            resize: none;
+            margin-bottom: 52px;
+            @include media($md){
+                max-width: 380px;
+            }
+            @include media($sm){
+                max-width: 300px;
+            }
+            @include media($xs){
+                max-width: 250px;
+                height: 300px;
+            }
+            @include media(400px){
+                max-width: 150px;
+                height: 150px;
+            }
+        }
+    }
+
+    &__item:last-of-type {
+        @include row();
+        justify-content: space-between;
+        margin-bottom: 127px;
+    }
+
+    &__info {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 33px;
+        color: $white;
+        max-width: 337px;
+        @include media($sm){
+            font-size: 18px;
+            line-height: 25px;
+        }
+    }
+
+    &__button {
+        padding: 19px 44px;
+        background: $yellow;
+        border: none;
+        outline: none;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 41px;
+        color: $white;
+        border-radius: 1px;
+        @include media($xs){
+            padding: 15px 30px;
+             font-size: 20px;
+            line-height: 20px;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        overflow: hidden;
+
+        &-link {
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 34px;
+            color: $white;
+            @include media($md){
+                font-size: 20px;
+                line-height: 20px; 
+            }
+            @include media($sm){
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                line-height: 20px; 
+            }
+
+            i {
+                margin-left: 30px;
+                display: inline-block;
+                width: 28px;
+                height: 29px;
+                text-align: end;
+            }
+        }
+
+        &-item {
+            margin-bottom: 30px;
+        }
+
+        &-item:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

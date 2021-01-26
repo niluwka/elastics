@@ -1,0 +1,31 @@
+$white: white;
+$black: black;
+$yellow:#CCAF40;
+$contact:#242424;
+$bg:#040405;
+$bea:radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.69) 100%);
+$pot:radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.44) 100%);
+$fash_cou:radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);
+$mee_peo_pro:radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%);
+$nat_birth: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+
+$fonts: ('OpenSans', 'Regular', 400),
+('OpenSans', 'Bold', 700),
+('OpenSans', 'Light', 300),
+('OpenSans', 'ExtraBold', 800),
+('OpenSans', 'SemiBold', 600),
+('Roboto', 'Bold', 700),
+('Roboto', 'Regular', 400),
+('FontAwesome', '300', 300),
+('FontAwesome', '400', 400),
+('FontAwesome', '900', 900);
+
+@each $name,
+$name2,
+$weight in $fonts {
+    @font-face {
+        font-family: $name;
+        src: url(../fonts/#{$name}/#{$name}-#{$name2}.woff2);
+        font-weight: $weight;
+    }
+}

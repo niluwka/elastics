@@ -1,0 +1,65 @@
+-var icons = ['be', 'facebook', 'instagram']
+
+-var books = ['Engagement', 'Business event', 'Wedding', 'Birthday','Maternity','Graduation','Product','Honeymoon','Fashion','Anniversary','Food','Conference','Team and workspace','Personal Potrait','Family','Travel shoot','Baby','Others']
+
+-var inputs = [{ class:'input',type:'text', date:'date', id: 'form-date', placeholder:'Select date',for:'form-date', label:'date',name:'date'},{class:'time',type:'text',date:'time', id: 'form-time', placeholder:'Select time',for:'form-time', label:'time',name:'time'},{class:'address',type:'text', id: 'form-address', placeholder:'Enter the location address',for:'form-address', label:'Address',name:'address'}]
+
+-var details = [{ type:'text', id: 'form-name', placeholder:'Enter full name',for:'form-name', label:'Name',name:'date'},{type:'tel', id: 'form-number', placeholder:'Enter phone number',for:'form-number', label:'Phone number'},{type:'email', id: 'form-email', placeholder:'Enter email address',for:'form-email', label:'Email'}]
+
+-var selects = [{ desc:'Basic', price: '30,000', info:'1 hour shoot Unlimited photos Editing included',btn:'Select'},{ desc:'Standard', price: '50,000', info:'2 hours shoot Unlimited photos Editing included',btn:'Select'},{ desc:'Premium', price: '80,000', info:'3 hours shoot Unlimited photos Editing included Free photobook',btn:'Select'}]
+
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="./style/main.min.css")
+        title Document
+    body.body
+        include view/components/header.pug
+        main.book
+            .book__container
+                .book__content
+                    h3.book__content-title Welcome to the booking page!
+                    p.book__content-desc Kindly provide necessary informations by attending to the questions below.
+                .book__tab
+                    h4.book__tab-title What you booking for? 
+                    p.book__tab-desc (you can select multiple options)
+                    ul.book__tab-item
+                        each book in books
+                             li.book__tab-list
+                                  a(href="#!").book__tab-link= book                        
+                .book__dispatch    
+                    h4.book__dispatch-title When and where is the photoshoot?
+                    form(action="").book__form
+                        each input in inputs 
+                            .book__form-item
+                                input(class= 'book__form-' + input.class)(type=input.type id=input.id placeholder=input.placeholder contenteditable="true" required name=input.name )
+                                label.book__form-label(for=input.for)= input.label
+                                i.icon-book
+                .book__select
+                    h4.book__select-title Select your preffered package
+                    .book__select-card
+                        each select in selects 
+                            .book__select-item
+                                p.book__select-desc= select.desc                                   
+                                h5.book__select-price                                    
+                                    img(src="images/n.svg", alt="")     
+                                    span= select.price                              
+                                p.book__select-info= select.info
+                                a(href="#!").book__select-btn= select.btn
+                .book__details.book__dispatch
+                    h4.book__dispatch-title.book__details-title Kindly provide your contact details
+                    form(action="").book__details-form.book__form
+                        each detail in details 
+                            .book__details-item.book__form-item
+                                input.book__details-input.book__form-input(type=detail.type id=detail.id placeholder=detail.placeholder required)
+                                label.book__details-label.book__form-label(for=detail.for)= detail.label
+                                i.icon-book
+                .book__footer-btn
+                    button.btn.btn__bot Book now
+                    a(href="#!").btn__save Save and book later              
+      
+            
+        
+        script(src="./script/common.js")

@@ -1,0 +1,36 @@
+
+.contact{
+    &__content{
+          &-desc{
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 49px;            
+            color: $white;
+            @include media($sm){
+              font-size: 20px;
+              line-height: 30px;
+            }
+            @include media($xs){
+              font-size: 15px;
+              line-height: 20px;
+            }
+          }
+          &-desc:last-of-type{
+            margin-top: 56px;
+            @include media($xs){
+              margin-top: 25px;
+            }
+          }
+          &-span{
+              color: $yellow;
+
+          }
+    }
+  
+}
+.about__content{
+  grid-template-columns: 1fr 2fr;
+  @include media($md){
+    grid-template-columns: 1fr 5fr;
+  }
+}
